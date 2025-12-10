@@ -7,47 +7,10 @@ import {
 } from "@/src/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  tags: string[];
-  imageUrl: string;
-  link: string;
-}
+import { PROJECTS } from "./_utils";
+import { ArrowRight } from "lucide-react";
 
 export default function Projetos() {
-  const MOCK_PROJECTS: Project[] = [
-    {
-      id: 1,
-      title: "E-commerce Dashboard",
-      description:
-        "Um painel administrativo completo com gráficos em tempo real, gerenciamento de estoque e temas escuro/claro.",
-      tags: ["Next.js", "TypeScript", "Tailwind", "Recharts"],
-      imageUrl: "https://picsum.photos/800/600?random=1",
-      link: "#",
-    },
-    {
-      id: 2,
-      title: "AI Image Generator",
-      description:
-        "Aplicação SaaS que utiliza IA generativa para criar imagens baseadas em prompts de texto do usuário.",
-      tags: ["React", "Gemini API", "Node.js", "Stripe"],
-      imageUrl: "https://picsum.photos/800/600?random=2",
-      link: "#",
-    },
-    {
-      id: 3,
-      title: "Finance Tracker App",
-      description:
-        "Aplicativo mobile-first para controle financeiro pessoal com sincronização em nuvem e modo offline.",
-      tags: ["React Native", "Firebase", "Redux", "Expo"],
-      imageUrl: "https://picsum.photos/800/600?random=3",
-      link: "#",
-    },
-  ];
-
   return (
     <section className="py-20 animate-fade-in">
       <div className="mb-12">
@@ -61,7 +24,7 @@ export default function Projetos() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {MOCK_PROJECTS.map((project) => (
+        {PROJECTS.map((project) => (
           <div
             key={project.id}
             className="group glass-panel rounded-xl overflow-hidden"
@@ -77,7 +40,7 @@ export default function Projetos() {
               <div className="absolute inset-0 bg-linear-to-t from-slate-900 to-transparent opacity-60"></div>
             </div>
 
-            <Card className="bg-slate-900/50 backdrop-blur-md border border-slate-900 border-t-0 rounded-t-none hover:border-cyan-500/30 transition-all duration-300 hover:-translate-y-1">
+            <Card className="h-[281px] bg-slate-900/50 backdrop-blur-md border border-slate-900 border-t-0 rounded-t-none hover:border-cyan-500/30 transition-all duration-300 hover:-translate-y-1">
               <CardHeader>
                 <CardTitle className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
                   {project.title}
@@ -87,7 +50,7 @@ export default function Projetos() {
                 </CardDescription>
               </CardHeader>
 
-              <CardContent>
+              <CardContent className="flex flex-col justify-between h-full">
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag) => (
                     <span
@@ -99,25 +62,26 @@ export default function Projetos() {
                   ))}
                 </div>
 
-                <Link
-                  href={project.link}
-                  className="inline-flex items-center text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
-                >
-                  Ver Projeto
-                  <svg
-                    className="w-4 h-4 ml-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                <div className="flex justify-between items-center">
+                  <Link
+                    href={project.link}
+                    className="inline-flex items-center text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
+                    target="_blank"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </Link>
+                    Ver Projeto
+                    <ArrowRight className="w-4 h-4 ml-1" />
+                  </Link>
+                  {project.github && (
+                    <Link
+                      href={project.github}
+                      className="inline-flex items-center text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
+                      target="_blank"
+                    >
+                      Ver Repositório
+                      <ArrowRight className="w-4 h-4 ml-1" />
+                    </Link>
+                  )}
+                </div>
               </CardContent>
             </Card>
           </div>
