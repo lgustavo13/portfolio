@@ -9,6 +9,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { PROJECTS } from "./_utils";
 import { ArrowRight } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/src/components/ui/tooltip";
 
 export default function Projetos() {
   return (
@@ -45,9 +50,16 @@ export default function Projetos() {
                 <CardTitle className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
                   {project.title}
                 </CardTitle>
-                <CardDescription className="text-slate-400 text-sm mb-4 line-clamp-2">
-                  {project.description}
-                </CardDescription>
+                <Tooltip>
+                  <TooltipTrigger className="text-start">
+                    <CardDescription className="text-slate-400 text-sm mb-4 line-clamp-2">
+                      {project.description}
+                    </CardDescription>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{project.description}</p>
+                  </TooltipContent>
+                </Tooltip>
               </CardHeader>
 
               <CardContent className="flex flex-col justify-between h-full">
