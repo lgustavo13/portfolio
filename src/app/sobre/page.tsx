@@ -1,121 +1,31 @@
 import Image from "next/image";
+import { HARD_SKILLS, SOFT_SKILLS } from "./_utils";
 
 export default function Sobre() {
-  const HARD_SKILLS = [
-    { name: "React / Next.js", category: "Frontend" },
-    { name: "TypeScript", category: "Language" },
-    { name: "Tailwind CSS", category: "Styling" },
-    { name: "Node.js", category: "Backend" },
-    { name: "Rest API", category: "API" },
-    { name: "Figma", category: "Design" },
-    { name: "Jest / Testing Lib", category: "Testing" },
-    { name: "Git / CI/CD", category: "DevOps" },
-  ];
-
-  const SOFT_SKILLS = [
-    {
-      title: "Comunicação Eficaz",
-      description:
-        "Habilidade de traduzir requisitos técnicos para stakeholders e colaborar com designers.",
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Resolução de Problemas",
-      description:
-        "Pensamento analítico focado em encontrar soluções performáticas e escaláveis.",
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Adaptabilidade",
-      description:
-        "Facilidade em aprender novas stacks e se adaptar a mudanças rápidas de escopo.",
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Liderança Técnica",
-      description:
-        "Experiência em mentoria de desenvolvedores júnior e Code Reviews construtivos.",
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-          />
-        </svg>
-      ),
-    },
-  ];
   return (
     <section className="py-20 animate-fade-in">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20 items-center">
         <div className="order-2 lg:order-1">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Mais que código, <br />
+            Transformando ideias em <br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-purple-500">
-              construo soluções.
+              aplicações web robustas e acessíveis.
             </span>
           </h2>
           <div className="space-y-4 text-slate-400 text-lg leading-relaxed">
             <p>
-              Olá! Sou um Engenheiro de Software apaixonado pelo ecossistema
-              Front-end. Com mais de 5 anos de experiência, especializei-me em
-              criar interfaces que não são apenas bonitas, mas extremamente
-              funcionais e acessíveis.
+              Olá! Sou desenvolvedor Front-end com mais de 4 anos de
+              experiência, especializado em transformar ideias complexas em
+              aplicações web de alta performance. Meu foco é garantir que cada
+              interface seja intuitiva, acessível e capaz de escalar conforme o
+              seu negócio cresce.
             </p>
             <p>
-              Minha jornada começou com HTML e CSS básicos, evoluindo para
-              arquiteturas complexas usando Next.js e renderização no servidor.
-              Acredito que a tecnologia deve ser invisível, permitindo que o
-              usuário atinja seus objetivos sem atrito.
+              Por vir de uma base sólida em QA, trago um olhar crítico para a
+              qualidade do código e atenção minuciosa aos detalhes. Trabalho
+              principalmente com o ecossistema React, Next.js e TypeScript,
+              garantindo que cada solução seja robusta, testada e pronta para o
+              mercado.
             </p>
           </div>
         </div>
@@ -124,7 +34,7 @@ export default function Sobre() {
             <div className="absolute inset-0 bg-linear-to-tr from-cyan-500 to-purple-600 rounded-2xl rotate-6 opacity-50 blur-lg"></div>
             <div className="relative w-full h-full bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl">
               <Image
-                src="https://picsum.photos/400/400?grayscale"
+                src="/profile.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover"
                 width={400}

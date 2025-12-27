@@ -9,9 +9,10 @@ export default function Home() {
         </span>
 
         <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
-          Criando experiências <br />
+          Criando aplicações
+          <br />
           <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-purple-500">
-            digitais extraordinárias
+            Web extraordinárias
           </span>
         </h1>
 
