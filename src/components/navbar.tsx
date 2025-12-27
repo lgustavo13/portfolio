@@ -26,9 +26,9 @@ export const Navbar = () => {
           className="text-xl font-bold text-white cursor-pointer flex items-center gap-2"
         >
           <div className="w-8 h-8 bg-linear-to-br from-cyan-500 to-purple-600 rounded-lg flex items-center justify-center">
-            <span className="text-white text-lg font-bold">D</span>
+            <span className="text-white text-lg font-bold">GS</span>
           </div>
-          <span>DevPortfolio</span>
+          <span>Web Apps</span>
         </Link>
 
         <div className="hidden md:flex items-center space-x-8">
