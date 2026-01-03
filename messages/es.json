@@ -40,6 +40,17 @@
       }
     }
   },
-  "ProjectsPage": {},
+  "ProjectsPage": {
+    "my_projects": "Mis Proyectos",
+    "my_projects_description": "Una colección de trabajos recientes que demuestran mi pasión por el diseño y el código de alta calidad.",
+    "see_project": "Ver proyecto",
+    "see_repository": "Ver repositorio",
+    "projects": {
+      "finance_ai_description": "Un sistema de gestión financiera que utiliza IA para generar insights y consejos para mejorar tu vida financiera.",
+      "notes_description": "Un bloc de notas que cuenta con funcionalidad de comando de voz para escribir tus notas.",
+      "hamburgueria_description": "Aplicación de hamburguesería creada con JavaScript puro.",
+      "edu_manager_description": "Aplicación escolar para la gestión de estudiantes."
+    }
+  },
   "ContactPage": {}
 }

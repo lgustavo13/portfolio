@@ -40,6 +40,17 @@
       }
     }
   },
-  "ProjectsPage": {},
+  "ProjectsPage": {
+    "my_projects": "My Projects",
+    "my_projects_description": "A collection of recent work that demonstrates my passion for design and high-quality code.",
+    "see_project": "View project",
+    "see_repository": "View repository",
+    "projects": {
+      "finance_ai_description": "A financial management system that uses AI to generate insights and tips to improve your financial life.",
+      "notes_description": "A notepad featuring voice command functionality to type your notes.",
+      "hamburgueria_description": "Burger restaurant application using Vanilla JavaScript.",
+      "edu_manager_description": "School application for student management."
+    }
+  },
   "ContactPage": {}
 }

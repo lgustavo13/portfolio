@@ -7,29 +7,33 @@ import {
 } from "@/src/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import { PROJECTS } from "./_utils";
+import { getProjects } from "./_utils";
 import { ArrowRight } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/src/components/ui/tooltip";
+import { useTranslations } from "next-intl";
 
 export default function Projetos() {
+  const t = useTranslations("ProjectsPage");
+
+  const projects = getProjects(t);
+
   return (
     <section className="py-20 animate-fade-in">
       <div className="mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Meus Projetos
+          {t("my_projects")}
         </h2>
         <p className="text-slate-400 max-w-2xl">
-          Uma coleção de trabalhos recentes que demonstram minha paixão por
-          design e código de alta qualidade.
+          {t("my_projects_description")}
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {PROJECTS.map((project) => (
+        {projects.map((project) => (
           <div
             key={project.id}
             className="group glass-panel rounded-xl overflow-hidden"
@@ -80,7 +84,7 @@ export default function Projetos() {
                     className="inline-flex items-center text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
                     target="_blank"
                   >
-                    Ver Projeto
+                    {t("see_project")}
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </Link>
                   {project.github && (
@@ -89,7 +93,7 @@ export default function Projetos() {
                       className="inline-flex items-center text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
                       target="_blank"
                     >
-                      Ver Repositório
+                      {t("see_repository")}
                       <ArrowRight className="w-4 h-4 ml-1" />
                     </Link>
                   )}
