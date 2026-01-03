@@ -52,5 +52,24 @@
       "edu_manager_description": "Aplicación escolar para la gestión de estudiantes."
     }
   },
-  "ContactPage": {}
+  "ContactPage": {
+    "title": "¿Trabajamos juntos?",
+    "description": "Siempre busco nuevos desafíos. Si tienes un proyecto en mente o simplemente quieres saludar, contáctame.",
+    "email": "Correo electrónico",
+    "social": "Redes Sociales",
+    "form": {
+      "send_message": "Envía un mensaje",
+      "description": "Completa los datos a continuación para ser atendido por nuestro equipo vía WhatsApp.",
+      "name": "Nombre Completo",
+      "your_name": "Tu nombre",
+      "email": "Correo electrónico",
+      "your_email": "tu@email.com",
+      "phone": "Teléfono",
+      "your_phone": "(00) 00000-0000",
+      "message": "Mensaje",
+      "how_can_i_help": "¿Cómo puedo ayudarte?",
+      "whatsapp_chat": "Iniciar chat en WhatsApp",
+      "whatsapp_greeting": "¡Hola! Vengo del sitio web y me gustaría recibir atención."
+    }
+  }
 }

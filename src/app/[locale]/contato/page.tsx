@@ -2,8 +2,11 @@
 
 import { ContactForm } from "@/src/components/contactForm";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function Contato() {
+  const t = useTranslations("ContactPage");
+
   const socialLinks = [
     {
       name: "LinkedIn",
@@ -20,12 +23,9 @@ export default function Contato() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Vamos trabalhar juntos?
+            {t("title")}
           </h2>
-          <p className="text-slate-400 text-lg mb-8">
-            Estou sempre em busca de novos desafios. Se você tem um projeto em
-            mente ou apenas quer dar um oi, entre em contato.
-          </p>
+          <p className="text-slate-400 text-lg mb-8">{t("description")}</p>
 
           <div className="space-y-6">
             <div className="flex items-center space-x-4">
@@ -45,7 +45,7 @@ export default function Contato() {
                 </svg>
               </div>
               <div>
-                <p className="text-sm text-slate-500">Email</p>
+                <p className="text-sm text-slate-500">{t("email")}</p>
                 <Link
                   href="mailto:luizgustavo974@hotmail.com"
                   className="text-white hover:text-cyan-400 transition-colors"
@@ -72,7 +72,7 @@ export default function Contato() {
                 </svg>
               </div>
               <div>
-                <p className="text-sm text-slate-500">Social</p>
+                <p className="text-sm text-slate-500">{t("social")}</p>
                 <div className="flex space-x-4">
                   {socialLinks.map((link) => (
                     <Link

@@ -52,5 +52,24 @@
       "edu_manager_description": "School application for student management."
     }
   },
-  "ContactPage": {}
+  "ContactPage": {
+    "title": "Let's work together?",
+    "description": "I'm always looking for new challenges. If you have a project in mind or just want to say hi, get in touch.",
+    "email": "Email",
+    "social": "Social",
+    "form": {
+      "send_message": "Send a Message",
+      "description": "Fill in the details below to be assisted by our team via WhatsApp.",
+      "name": "Full Name",
+      "your_name": "Your name",
+      "email": "Email",
+      "your_email": "you@email.com",
+      "phone": "Phone",
+      "your_phone": "(00) 00000-0000",
+      "message": "Message",
+      "how_can_i_help": "How can I help you?",
+      "whatsapp_chat": "Start WhatsApp Chat",
+      "whatsapp_greeting": "Hello! I came from the website and would like assistance."
+    }
+  }
 }

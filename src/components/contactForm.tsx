@@ -7,8 +7,11 @@ import { formatPhone } from "../utils/formatPhone";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
+import { useTranslations } from "next-intl";
 
 export const ContactForm = () => {
+  const t = useTranslations("ContactPage");
+
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -22,13 +25,13 @@ export const ContactForm = () => {
     const companyPhone = "5519999727241";
 
     const text = `
-  *Olá! Vim através do site e gostaria de um atendimento.*
+  *${t("form.whatsapp_greeting")}*
   
-  *Nome:* ${formState.name}
-  *Email:* ${formState.email}
-  *Telefone:* ${formState.phone}
+  *${t("form.name")}:* ${formState.name}
+  *${t("form.email")}:* ${formState.email}
+  *${t("form.phone")}:* ${formState.phone}
   
-  *Mensagem:*
+  *${t("form.message")}:*
   ${formState.message}
       `.trim();
 
@@ -56,14 +59,14 @@ export const ContactForm = () => {
   };
   return (
     <div className="glass-panel rounded-2xl p-5 flex flex-col  border border-white/10 shadow-2xl shadow-cyan-900/10">
-      <h2 className="text-2xl font-bold text-white mb-8">Envie uma Mensagem</h2>
-      <p className="text-slate-400 mb-8 text-sm">
-        Preencha os dados abaixo para ser atendido via WhatsApp pelo nosso time.
-      </p>
+      <h2 className="text-2xl font-bold text-white mb-8">
+        {t("form.send_message")}
+      </h2>
+      <p className="text-slate-400 mb-8 text-sm">{t("form.description")}</p>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <Label htmlFor="name" className="text-sm font-medium text-white mb-2">
-            Nome Completo
+            {t("form.name")}
           </Label>
           <Input
             type="text"
@@ -73,7 +76,7 @@ export const ContactForm = () => {
             value={formState.name}
             onChange={handleChange}
             className="rounded-lg border border-slate-900 focus:border-slate-500 focus:ring-1 focus:ring-slate-500 outline-none transition-all"
-            placeholder="Seu nome"
+            placeholder={t("form.your_name")}
           />
         </div>
 
@@ -83,7 +86,7 @@ export const ContactForm = () => {
               htmlFor="email"
               className="text-sm font-medium text-white mb-2"
             >
-              Email
+              {t("form.email")}
             </Label>
             <Input
               type="email"
@@ -93,7 +96,7 @@ export const ContactForm = () => {
               value={formState.email}
               onChange={handleChange}
               className="rounded-lg border border-slate-900 focus:border-slate-500 focus:ring-1 focus:ring-slate-500 outline-none transition-all"
-              placeholder="seu@email.com"
+              placeholder={t("form.your_email")}
             />
           </div>
           <div>
@@ -101,7 +104,7 @@ export const ContactForm = () => {
               htmlFor="phone"
               className="text-sm font-medium text-white mb-2"
             >
-              Telefone
+              {t("form.phone")}
             </Label>
             <Input
               type="tel"
@@ -110,7 +113,7 @@ export const ContactForm = () => {
               value={formState.phone}
               onChange={handleChange}
               className="rounded-lg border border-slate-900 focus:border-slate-500 focus:ring-1 focus:ring-slate-500 outline-none transition-all"
-              placeholder="(00) 00000-0000"
+              placeholder={t("form.your_phone")}
             />
           </div>
         </div>
@@ -120,7 +123,7 @@ export const ContactForm = () => {
             htmlFor="message"
             className="text-sm font-medium text-white mb-2"
           >
-            Mensagem
+            {t("form.message")}
           </Label>
           <Textarea
             id="message"
@@ -129,7 +132,7 @@ export const ContactForm = () => {
             value={formState.message}
             onChange={handleChange}
             className="border-slate-900 focus:border-slate-500 focus:ring-1 focus:ring-slate-500 transition-all resize-none"
-            placeholder="Como posso ajudar você?"
+            placeholder={t("form.how_can_i_help")}
           ></Textarea>
         </div>
 
@@ -139,7 +142,7 @@ export const ContactForm = () => {
           className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-lg transition-all shadow-lg hover:shadow-emerald-500/25 flex items-center justify-center gap-2 hover:cursor-pointer"
         >
           <MessageCircle size={20} />
-          Iniciar Conversa no WhatsApp
+          {t("form.whatsapp_chat")}
         </Button>
       </form>
     </div>
