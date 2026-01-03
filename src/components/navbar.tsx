@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "./ui/button";
+import { LanguageSwitcher } from "./languageSwitcher";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,6 +33,8 @@ export const Navbar = () => {
         </Link>
 
         <div className="hidden md:flex items-center space-x-8">
+          <LanguageSwitcher />
+
           {navLink.map((item) => (
             <Link
               key={item.label}
@@ -47,7 +50,9 @@ export const Navbar = () => {
           ))}
         </div>
 
-        <div className="md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
+          <LanguageSwitcher />
+
           <Button
             variant="ghost"
             onClick={() => setIsMenuOpen(!isMenuOpen)}

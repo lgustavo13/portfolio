@@ -1,5 +1,12 @@
 {
-  "HomePage": {},
+  "HomePage": {
+    "available_to_new_projects": "Disponível para novos projetos",
+    "creating_extraordinary": "Criando aplicações",
+    "web_applications": "Web extraordinárias",
+    "about_me_resume": "Sou um Desenvolvedor Front-end focado em construir interfaces modernas, performáticas e acessíveis utilizando a stack React e Next.js.",
+    "see_projects": "Ver projetos",
+    "contact": "Contato"
+  },
   "AboutPage": {},
   "ProjectsPage": {},
   "ContactPage": {}
