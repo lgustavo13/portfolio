@@ -81,6 +81,9 @@
       "about": "Sobre mí",
       "projects": "Proyectos",
       "contact": "Contacto"
+    },
+    "LanguageSwitcher": {
+      "title": "Selecciona un idioma"
     }
   }
 }
