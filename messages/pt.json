@@ -7,7 +7,39 @@
     "see_projects": "Ver projetos",
     "contact": "Contato"
   },
-  "AboutPage": {},
+  "AboutPage": {
+    "transforming_ideas": "Transformando ideias em",
+    "robust_and_accessible": "aplicações web robustas e acessíveis.",
+    "about_me": {
+      "title_1": "Olá! Sou desenvolvedor Front-end com mais de 4 anos de experiência, especializado em transformar ideias complexas em aplicações web de alta performance. Meu foco é garantir que cada interface seja intuitiva, acessível e capaz de escalar conforme o seu negócio cresce.",
+      "title_2": "Por vir de uma base sólida em QA, trago um olhar crítico para a qualidade do código e atenção minuciosa aos detalhes. Trabalho principalmente com o ecossistema React, Next.js e TypeScript, garantindo que cada solução seja robusta, testada e pronta para o mercado."
+    },
+    "skills": {
+      "soft": {
+        "communication": {
+          "title": "Comunicação Eficaz",
+          "description": "Habilidade de traduzir requisitos técnicos e colaborar com designers."
+        },
+        "problemSolving": {
+          "title": "Resolução de Problemas",
+          "description": "Pensamento analítico focado em encontrar soluções performáticas e escaláveis."
+        },
+        "adaptability": {
+          "title": "Adaptabilidade",
+          "description": "Facilidade em aprender novas stacks e se adaptar a mudanças de escopo."
+        },
+        "organization": {
+          "title": "Organização",
+          "description": "Organização de projetos e gerenciamento de tempo."
+        }
+      },
+      "categories": {
+        "language": "Linguagem",
+        "styling": "Estilização",
+        "testing": "Testes"
+      }
+    }
+  },
   "ProjectsPage": {},
   "ContactPage": {}
 }

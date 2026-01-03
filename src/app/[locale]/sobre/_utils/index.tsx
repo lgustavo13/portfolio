@@ -1,39 +1,41 @@
 import { Lamp } from "@/src/components/icon/Lamp";
 import { FolderKanban, MessagesSquare, RefreshCcw } from "lucide-react";
 
-export const HARD_SKILLS = [
+type Translator = (key: string) => string;
+
+export const getHardSkills = (t: Translator) => [
   { name: "React / Next.js", category: "Frontend" },
-  { name: "TypeScript", category: "Language" },
-  { name: "Tailwind CSS / Bootstrap", category: "Styling" },
+  { name: "TypeScript", category: t("skills.categories.language") },
+  {
+    name: "Tailwind CSS / Bootstrap",
+    category: t("skills.categories.styling"),
+  },
   { name: "Node.js", category: "Backend" },
   { name: "Rest API", category: "API" },
   { name: "Figma", category: "Design" },
-  { name: "Vitest / Cypress", category: "Testing" },
+  { name: "Vitest / Cypress", category: t("skills.categories.testing") },
   { name: "Git / CI/CD", category: "DevOps" },
 ];
 
-export const SOFT_SKILLS = [
+export const getSoftSkills = (t: Translator) => [
   {
-    title: "Comunicação Eficaz",
-    description:
-      "Habilidade de traduzir requisitos técnicos e colaborar com designers.",
+    title: t("skills.soft.communication.title"),
+    description: t("skills.soft.communication.description"),
     icon: <MessagesSquare />,
   },
   {
-    title: "Resolução de Problemas",
-    description:
-      "Pensamento analítico focado em encontrar soluções performáticas e escaláveis.",
+    title: t("skills.soft.problemSolving.title"),
+    description: t("skills.soft.problemSolving.description"),
     icon: <Lamp />,
   },
   {
-    title: "Adaptabilidade",
-    description:
-      "Facilidade em aprender novas stacks e se adaptar a mudanças de escopo.",
+    title: t("skills.soft.adaptability.title"),
+    description: t("skills.soft.adaptability.description"),
     icon: <RefreshCcw />,
   },
   {
-    title: "Organização",
-    description: "Organização de projetos e gerenciamento de tempo.",
+    title: t("skills.soft.organization.title"),
+    description: t("skills.soft.organization.description"),
     icon: <FolderKanban />,
   },
 ];

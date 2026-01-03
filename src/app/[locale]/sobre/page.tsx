@@ -1,32 +1,26 @@
 import Image from "next/image";
-import { HARD_SKILLS, SOFT_SKILLS } from "./_utils";
+import { getHardSkills, getSoftSkills } from "./_utils";
+import { useTranslations } from "next-intl";
 
 export default function Sobre() {
+  const t = useTranslations("AboutPage");
+
+  const hardSkills = getHardSkills(t);
+  const softSkills = getSoftSkills(t);
+
   return (
     <section className="py-20 animate-fade-in">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20 items-center">
         <div className="order-2 lg:order-1">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Transformando ideias em <br />
+            {t("transforming_ideas")} <br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-purple-500">
-              aplicações web robustas e acessíveis.
+              {t("robust_and_accessible")}
             </span>
           </h2>
           <div className="space-y-4 text-slate-400 text-lg leading-relaxed">
-            <p>
-              Olá! Sou desenvolvedor Front-end com mais de 4 anos de
-              experiência, especializado em transformar ideias complexas em
-              aplicações web de alta performance. Meu foco é garantir que cada
-              interface seja intuitiva, acessível e capaz de escalar conforme o
-              seu negócio cresce.
-            </p>
-            <p>
-              Por vir de uma base sólida em QA, trago um olhar crítico para a
-              qualidade do código e atenção minuciosa aos detalhes. Trabalho
-              principalmente com o ecossistema React, Next.js e TypeScript,
-              garantindo que cada solução seja robusta, testada e pronta para o
-              mercado.
-            </p>
+            <p>{t("about_me.title_1")}</p>
+            <p>{t("about_me.title_2")}</p>
           </div>
         </div>
         <div className="order-1 lg:order-2 flex justify-center">
@@ -51,7 +45,7 @@ export default function Sobre() {
           Hard Skills
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {HARD_SKILLS.map((skill, index) => (
+          {hardSkills.map((skill, index) => (
             <div
               key={index}
               className="border-b border-white/10 bg-slate-900/50 backdrop-blur-md p-4 rounded-xl border hover:border-cyan-500/30 hover:bg-slate-800/50 transition-all duration-300 group"
@@ -73,7 +67,7 @@ export default function Sobre() {
           Soft Skills
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {SOFT_SKILLS.map((skill, index) => (
+          {softSkills.map((skill, index) => (
             <div
               key={index}
               className="bg-slate-900/50 p-6 rounded-xl border border-slate-800 flex gap-4 hover:bg-slate-800/50 transition-colors"
