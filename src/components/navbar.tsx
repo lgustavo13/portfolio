@@ -5,16 +5,18 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { LanguageSwitcher } from "./languageSwitcher";
+import { useTranslations } from "next-intl";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const t = useTranslations("Header");
 
   const navLink = [
-    { label: "Home", href: "/" },
-    { label: "Sobre", href: "/sobre" },
-    { label: "Projetos", href: "/projetos" },
-    { label: "Contato", href: "/contato" },
+    { label: t("menu.home"), href: "/" },
+    { label: t("menu.about"), href: "/sobre" },
+    { label: t("menu.projects"), href: "/projetos" },
+    { label: t("menu.contact"), href: "/contato" },
   ];
 
   const isActive = (path: string) => pathname === path;

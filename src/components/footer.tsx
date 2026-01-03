@@ -1,12 +1,14 @@
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 export const Footer = () => {
+  const t = useTranslations("Footer");
+
   return (
     <footer className="border-t border-slate-800/50 py-8 mt-12 bg-slate-950">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
         <p>
-          &copy; {new Date().getFullYear()} DevPortfolio. Todos os direitos
-          reservados.
+          &copy; {new Date().getFullYear()} GS Web Apps. {t("copyright")}
         </p>
         <div className="flex space-x-6 mt-4 md:mt-0">
           <Link

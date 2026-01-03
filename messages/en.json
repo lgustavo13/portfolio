@@ -71,5 +71,16 @@
       "whatsapp_chat": "Start WhatsApp Chat",
       "whatsapp_greeting": "Hello! I came from the website and would like assistance."
     }
+  },
+  "Footer": {
+    "copyright": "All rights reserved."
+  },
+  "Header": {
+    "menu": {
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects",
+      "contact": "Contact"
+    }
   }
 }

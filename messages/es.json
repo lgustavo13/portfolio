@@ -71,5 +71,16 @@
       "whatsapp_chat": "Iniciar chat en WhatsApp",
       "whatsapp_greeting": "¡Hola! Vengo del sitio web y me gustaría recibir atención."
     }
+  },
+  "Footer": {
+    "copyright": "Todos los derechos reservados."
+  },
+  "Header": {
+    "menu": {
+      "home": "Inicio",
+      "about": "Sobre mí",
+      "projects": "Proyectos",
+      "contact": "Contacto"
+    }
   }
 }
