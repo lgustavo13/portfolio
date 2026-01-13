@@ -4,7 +4,7 @@ import { FolderKanban, MessagesSquare, RefreshCcw } from "lucide-react";
 type Translator = (key: string) => string;
 
 export const getHardSkills = (t: Translator) => [
-  { name: "React / Next.js", category: "Frontend" },
+  { name: "React / Next.js / Angular", category: "Frontend" },
   { name: "TypeScript", category: t("skills.categories.language") },
   {
     name: "Tailwind CSS / Bootstrap",
