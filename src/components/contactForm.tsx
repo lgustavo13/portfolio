@@ -3,11 +3,11 @@
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { MessageCircle } from "lucide-react";
-import { formatPhone } from "../utils/formatPhone";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import { useTranslations } from "next-intl";
+import { PhoneInput } from "./phone-input";
 
 export const ContactForm = () => {
   const t = useTranslations("ContactPage");
@@ -36,7 +36,7 @@ export const ContactForm = () => {
       `.trim();
 
     const whatsappUrl = `https://wa.me/${companyPhone}?text=${encodeURIComponent(
-      text
+      text,
     )}`;
     window.open(whatsappUrl, "_blank");
 
@@ -44,18 +44,18 @@ export const ContactForm = () => {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    let value = e.target.value;
-
-    if (e.target.name === "phone") {
-      value = formatPhone(value);
-    }
+    const value = e.target.value;
 
     setFormState({
       ...formState,
       [e.target.name]: value,
     });
+  };
+
+  const handlePhoneChange = (value: string | undefined) => {
+    setFormState((prev) => ({ ...prev, phone: value || "" }));
   };
   return (
     <div className="glass-panel rounded-2xl p-5 flex flex-col  border border-white/10 shadow-2xl shadow-cyan-900/10">
@@ -106,14 +106,11 @@ export const ContactForm = () => {
             >
               {t("form.phone")}
             </Label>
-            <Input
-              type="tel"
+            <PhoneInput
               id="phone"
               name="phone"
               value={formState.phone}
-              onChange={handleChange}
-              className="rounded-lg border border-slate-900 focus:border-slate-500 focus:ring-1 focus:ring-slate-500 outline-none transition-all"
-              placeholder={t("form.your_phone")}
+              onChange={handlePhoneChange}
             />
           </div>
         </div>
